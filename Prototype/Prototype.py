@@ -1,3 +1,5 @@
+import copy
+
 
 class Address:
     def __init__(self,street_addres,city,country):
@@ -21,4 +23,8 @@ class Person:
 
 
 john = Person('John',Address('123 London Road','London','UK'))
-print(john)
+jane = copy.deepcopy(john)
+jane.address.street_adress = '124B London Road'
+print(john,
+      '\n',
+      jane)
